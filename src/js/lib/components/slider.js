@@ -95,7 +95,7 @@ $.prototype.slider = function(autoplay) {
     }
 };
 
-$.prototype.createSlider = function({imgs, autoplay, dots}) {
+$.prototype.createSlider = function({imgs, autoplay, dots, container}) {
     let slider = document.createElement('div');
     slider.classList.add('carousel');
     slider.setAttribute('id', 'example');
@@ -138,10 +138,8 @@ $.prototype.createSlider = function({imgs, autoplay, dots}) {
 
     slider.querySelector('.carousel-indicators').append(...dotsArr);
     slider.querySelector('.carousel-slides').append(...slidesArr);
-    document.body.appendChild(slider);
+    document.querySelector(container).appendChild(slider);
 
     $('.carousel').slider(autoplay);
 };
-
-
 
